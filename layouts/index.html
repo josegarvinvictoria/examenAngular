@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+
+
+    <title>Examen UF666 - JGarvin</title>
+</head>
+
+<body ng-app="appProductes">
+    <div class="container" ng-controller = "ProductesController">
+        <div class="row">
+            <div class="jumbotron">
+                <div class="container text-center">
+                    <h3>Examen UF666 - Productes</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" id="llistatProductes" >
+                <fieldset>
+                <legend>Llistat de productes:</legend>
+                <ul>
+                    <li ng-repeat="producte in productes">Codi: {{producte.codi}} </br> Nom: {{producte.nom}} </br> Secció: {{producte.seccio}} </br> Preu: {{producte.preu}} 
+                        <button ng-click="editar(producte)">Editar</button>
+                      <button ng-click="esborrar(producte)">Esborrar</button>
+                       </li>
+                </ul>
+                </div>
+                </fieldset>
+            
+
+            <div class="col-md-offset-4 col-md-4" id="producteNou">
+               <fieldset>
+                <legend>Afegir producte nou:</legend>
+                Codi:
+                <input type="text" ng-model= "codiN" name="codiA" id="codiA" />
+                </br>
+                </br>
+                Nom:
+                <input type="text" ng-model="nomN" name="nomA" id="nomA" />
+                </br>
+                </br>
+                Secció:
+                <input type="text" ng-model="seccioN" name="seccioA" id="seccioA" />
+                </br>
+                </br>
+                Preu:
+                <input type="text" ng-model="preuN" name="preuA" id="preuA" />
+                </br>
+                </br>
+                <input type="button" value="Cancelar" />
+                <input type="button" value="Afegir" ng-click="afegir()" />
+                </fieldset>
+            </div>
+        </div>
+        </br>
+        <div class="row">
+            <div class="col-md-offset-8 col-md-4" id="producteEditar">
+               <fieldset>
+                <legend>Editar producte:</legend>
+                Codi:
+                <input type="text" ng-model="codiE" id="codiE" />
+                </br>
+                </br>
+                Nom:
+                <input type="text" ng-model="nomE" id="nomE" />
+                </br>
+                </br>
+                Secció:
+                <input type="text" ng-model="seccioE" id="seccioE" />
+                </br>
+                </br>
+                Preu:
+                <input type="text" ng-model="preuE" id="preuE" />
+                </br>
+                </br>
+                <input type="button" value="Cancelar" />
+                <input type="button" ng-click="actualitzar()" value="Modificar" />
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular-resource.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

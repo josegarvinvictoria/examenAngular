@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>Seccio</title>
+</head>
+<body  ng-app="appProductes">
+    <div class="container" ng-controller = "ProductesController">
+        
+        <div class="col-md-4" id="llistatProductes" >
+                <fieldset>
+                <legend>Productes de la secció :</legend>
+                <ul>
+                   <li ng-repeat="producte in productes">Codi: {{producte.codi}} </br> Nom: {{producte.nom}} </br> Secció:         {{producte.seccio}} </br> Preu: {{producte.preu}} 
+                        <button ng-click="editar(producte)">Editar</button>
+                      <button ng-click="esborrar(producte)">Esborrar</button>
+                       </li>    
+                </ul>
+                </fieldset>
+                </div>
+                
+        
+        
+    </div>
+    
+</body>
+</html>
